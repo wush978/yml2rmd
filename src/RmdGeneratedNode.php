@@ -8,18 +8,25 @@ class RmdGeneratedNode extends RmdNode
     protected $_template;
     
     public function __construct($title, $level, array $config = null, RmdNode $parent = null) {
-        $this->title = $title;
-        $this->level = $level;
-        $this->parent = $parent;
-        $this->_content = $this->getAttribute('_template', null);
-        
+        parent::__construct($title, $level, $config, $parent);
     }
     
     public function render() {
-        $params = $this->generateCombination($this->getAttribute('_generator'));
+        $generator = $this->getAttribute('_generator');
+        $params = $this->generateCombination($generator);
+        $template = $this->getAttribute('_template');
+        $retval = '';
+        foreach ($params as $param) {
+            $this->_content = $template;
+            foreach($param as $key => $value) {
+                $this->replace($key, $value); 
+            }
+            $retval .= $this->_content;
+        }        
+        return $retval;
     }
     
-    static private function replace($search, $replace) {
+    private function replace($search, $replace) {
         $this->_content = str_replace("%$search%", $replace, $this->_content);
     } 
     

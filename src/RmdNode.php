@@ -21,6 +21,9 @@ class RmdNode
         $this->title = $title;
         $this->level = $level;
         $this->parent = $parent;
+        if (is_null($config)) {
+            return;
+        }
         foreach($config as $key => $value) {
             switch($key) {
                 case '_attribute':
@@ -34,8 +37,12 @@ class RmdNode
                 case '_content':
                     assert(is_string($value));
                     $this->_content = $value;
+                    break;
                 default:
                     $child_class = $this->_child_class;
+                    if ($value === '') {
+                        $value = array();
+                    }
                     $this->child[$key] = new $child_class( $key, $level + 1, $value, $this );
             }        
         }
@@ -53,8 +60,9 @@ class RmdNode
     
     public function render() {
         $retval = $this->getTitle();
-        if (is_null($this->_content)) {
+        if (!is_null($this->_content)) {
             $callable = 'renderWithContent';
+            $retval .= $this->_content;
         } 
         else {
             $callable = 'renderWithoutContent';
@@ -70,7 +78,7 @@ class RmdNode
     
     private function getTitle() {
         $title = $this->title;
-        return str_replace('#', $this->level) . " $title" . self::getBr(); 
+        return str_repeat('#', $this->level) . " $title" . str_repeat(self::getBr(), 2); 
     }
     
     static public function getBr() {

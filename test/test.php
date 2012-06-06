@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../src/RmdNode.php';
+require_once __DIR__ . '/../src/RmdGeneratedNode.php';
 
 $config = yaml_parse_file( __DIR__ . '/test.yml' );
 

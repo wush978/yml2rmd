@@ -11,8 +11,6 @@ class RmdNode
     
     protected $_attribute = array();
     
-    protected $_child_class = __CLASS__;
-    
     protected $_content = null;
     
     protected $child = array();
@@ -30,18 +28,17 @@ class RmdNode
                     assert(is_array($value));
                     $this->_attribute = $value;
                     break;
-                case '_child_class':
-                    assert(is_string($value));
-                    $this->_child_class = $value;
-                    break;
                 case '_content':
                     assert(is_string($value));
                     $this->_content = $value;
                     break;
                 default:
-                    $child_class = $this->_child_class;
+                    $child_class = __CLASS__;
                     if ($value === '') {
                         $value = array();
+                    }
+                    if (isset($value['_attribute']['_class_name'])) {
+                        $child_class = $value['_attribute']['_class_name'];
                     }
                     $this->child[$key] = new $child_class( $key, $level + 1, $value, $this );
             }        

@@ -4,5 +4,56 @@ require_once __DIR__ . '/RmdNode.php';
 
 class RmdGeneratedNode extends RmdNode
 {
-
+    
+    protected $_template;
+    
+    public function __construct($title, $level, array $config = null, RmdNode $parent = null) {
+        $this->title = $title;
+        $this->level = $level;
+        $this->parent = $parent;
+        $this->_content = $this->getAttribute('_template', null);
+        
+    }
+    
+    public function render() {
+        $params = $this->generateCombination($this->getAttribute('_generator'));
+    }
+    
+    static private function replace($search, $replace) {
+        $this->_content = str_replace("%$search%", $replace, $this->_content);
+    } 
+    
+    private function generateCombination($key_list) {
+        assert(is_array($key_list) | is_null($key_list));
+        $retval = array();
+        if (count($key_list) <= 1) {
+            return $key_list;
+        }
+        return $this->generateCombinationInternal($key_list);
+    }
+    
+    private function generateCombinationInternal($key_list) {
+        if (count($key_list) == 2) {
+            $retval = array();
+            $list0 = $this->getAttribute($key_list[0], array());
+            $list1 = $this->getAttribute($key_list[1], array());
+            foreach($list0 as $element0) {
+                foreach ($list1 as $element1) {
+                    array_push($retval, array($key_list[0] => $element0, $key_list[1] => $element1)); 
+                }
+            }
+            return $retval;
+        }
+        $key_last = array_pop($key_list);
+        $retval_temp = $this->generateCombinationInternal($key_list);
+        $list = $this->getAttribute($key_last, array());
+        $retval = array();
+        foreach($retval_temp as $retval_element) {
+            foreach($list as $element) {
+                $retval_element[$key_last] = $element;
+                array_push($retval, $retval_element);
+            }
+        }
+        return $retval;
+    }
 }

@@ -15,7 +15,7 @@ class RmdGeneratedNode extends RmdNode
         $generator = $this->getAttribute('_generator');
         $params = $this->generateCombination($generator);
         $template = $this->getAttribute('_template');
-        $retval = '';
+        $retval = $this->getTitle();
         foreach ($params as $param) {
             $this->_content = $template;
             foreach($param as $key => $value) {

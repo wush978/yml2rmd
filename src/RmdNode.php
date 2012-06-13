@@ -73,7 +73,7 @@ class RmdNode
         return $retval;
     }
     
-    private function getTitle() {
+    public function getTitle() {
         $title = $this->title;
         return str_repeat('#', $this->level) . " $title" . str_repeat(self::getBr(), 2); 
     }

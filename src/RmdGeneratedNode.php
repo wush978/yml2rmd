@@ -32,9 +32,13 @@ class RmdGeneratedNode extends RmdNode
     
     private function generateCombination($key_list) {
         assert(is_array($key_list) | is_null($key_list));
-        $retval = array();
         if (count($key_list) <= 1) {
-            return $key_list;
+	        $retval = array();
+            $list = $this->getAttribute($key_list[0], array());
+            foreach($list as $element) {
+            	array_push($retval, array($key_list[0] => $element));
+            }
+            return $retval;
         }
         return $this->generateCombinationInternal($key_list);
     }

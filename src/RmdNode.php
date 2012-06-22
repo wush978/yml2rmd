@@ -74,7 +74,7 @@ class RmdNode
     }
     
     public function getTitle() {
-        $title = $this->title;
+        $title = $this->getAttribute('title', $this->title);
         return str_repeat('#', $this->level) . " $title" . str_repeat(self::getBr(), 2); 
     }
     

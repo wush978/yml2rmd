@@ -24,6 +24,9 @@ try {
 	
 	// Loading file content
 	$yml_file = yaml_parse_file($yml_file_name);
+	if ($yml_file === FALSE) {
+		throw new Exception("$yml_file_name is an invalid .yml file");
+	}
 	
 	require_once __DIR__ . '/src/RmdGeneratedNode.php';
 	

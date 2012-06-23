@@ -213,150 +213,150 @@ test.normality(sim.data)
 
 
 ```
-
-
-
-misq1-distance0-test0.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 1)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance0-test1.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 1)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance0-test2.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 1)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance1-test0.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 10)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance1-test1.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 10)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance1-test2.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 10)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance2-test0.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 100)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance2-test1.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 100)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance2-test2.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 100)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance3-test0.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 1000)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance3-test1.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 1000)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
-
-
-
-misq1-distance3-test2.R
-library(MISQPlus, quietly=TRUE)
-source("misq1.params.R")
-misq1 <- new("MISQ", phi)
-sim.unit <- function(i) {
-  S <- cbind(rnorm(data.length), rnorm(data.length) + 1000)
-  dist(S, misq1)
-}
-sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance0-test0.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 1)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance0-test1.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 1)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance0-test2.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 1)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance1-test0.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 10)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance1-test1.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 10)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance1-test2.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 10)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance2-test0.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 100)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance2-test1.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 100)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance2-test2.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 100)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance3-test0.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 1000)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance3-test1.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 1000)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
+## 
+## 
+## 
+## misq1-distance3-test2.R
+## library(MISQPlus, quietly=TRUE)
+## source("misq1.params.R")
+## misq1 <- new("MISQ", phi)
+## sim.unit <- function(i) {
+##   S <- cbind(rnorm(data.length), rnorm(data.length) + 1000)
+##   dist(S, misq1)
+## }
+## sim.data <- sapply(1:sim.size, sim.unit)
 ```
 
 

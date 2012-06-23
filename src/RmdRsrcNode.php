@@ -9,14 +9,23 @@ class RmdRsrcNode extends RmdGeneratedNode {
 	public function render() {
 		$generator = $this->getAttribute('_generator');
 		$params = $this->generateCombination($generator);
+
+		$params_key = $params['key'];
+		$params_value = $params['value'];
 		$template = $this->getAttribute('_template');
-		foreach ($params as $param) {
+		for($i = 0;$i < count($params_key);$i++) {
 			$src_name = $this->getAttribute('_src_name');
 			if (is_null($src_name)) {
 				throw new Exception("No src_name");
 			} 
+			$param_key = $params_key[$i];
+			$param_value = $params_value[$i];
 			$this->_content = $template;
-			foreach($param as $key => $value) {
+			foreach($param_key as $key => $value) {
+				$this->replace("@$key", $value);
+				$this->replace("@$key", $value, $src_name);
+			}
+			foreach($param_value as $key => $value) {
 				$this->replace($key, $value);
 				$this->replace($key, $value, $src_name);
 			}

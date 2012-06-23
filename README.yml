@@ -1,0 +1,46 @@
+Introduction:
+  _content: |
+    
+    convert .yml to .Rmd
+    
+Example:
+  yml:
+    _attribute:
+      _title: test/test.yml
+    _content: |
+      ``` {r show_test.yml,echo=FALSE}
+      retval <- readLines("test/test.yml")
+      for(i in 1:length(retval)) {
+        print(retval[i])
+      }
+      ```
+  shell:
+    _content: |
+      
+      mkdir build
+      cd build && php ../yml2rmd.php ../test/test.yml test.Rmd && cd ..
+      
+  Rmd:
+    _attribute:
+      _title: build/test.Rmd
+    _content: |
+      ```{r show_test.Rmd,echo=FALSE}
+      retval <- readLines("build/test.Rmd")
+      for(i in 1:length(retval)) {
+        print(retval[i])
+      }
+      ```
+  R src:
+    _content: |
+      ```{r show_R_src,echo=FALSE}
+        r_file <- dir("build",pattern="*.R$")
+        for(r_file in file_name) {
+          print("===")
+          print(file_name)
+          retval <- readLines(paste("build/", file_name, sep=""))
+          for(i in 1:length(retval)) {
+            print(retval[i])
+          }
+          print("===")
+        }
+      ```

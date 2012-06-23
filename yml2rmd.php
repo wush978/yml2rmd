@@ -19,8 +19,6 @@ try {
 		$rmd_file_name = $argv[2];
 	else
 		$rmd_file_name = str_replace(".yml", ".Rmd", $yml_file_name);
-	if (file_exists($rmd_file_name))
-		throw new Exception($rmd_file_name . " is already existed.");
 	
 	// Loading file content
 	$yml_file = yaml_parse_file($yml_file_name);

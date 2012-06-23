@@ -10,15 +10,20 @@ Simulation:
       _attribute:
         _generator:
           0: distance
+          1: test
         distance:
-          0: 0
-          1: 1
-          10: 10
-          100: 100
+          distance0: 1
+          distance1: 10
+          distance2: 100
+          distance3: 1000
+        test:
+          test0: 1
+          test1: 10
+          test2: 100
       Normality Src:
         _attribute:
           _class_name: RmdRsrcNode
-          _src_name: misq1-%distance%.R
+          _src_name: misq1-%@distance%-%@test%.R
           _template: |
             library(MISQPlus, quietly=TRUE)
             source("misq1.params.R")
@@ -38,7 +43,7 @@ Simulation:
             - $latex S_2(t)$ is $latex N(%distance%,1)$ distributed.
             ```{r qqnorm-misq1-%distance%, echo=FALSE}
             source("pre.R")
-            cache.source("misq1-%distance%.R")
+            cache.source("misq1-%@distance%-%@test%.R")
             test.normality(sim.data)
             ```
       

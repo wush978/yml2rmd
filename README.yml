@@ -34,7 +34,7 @@ Example:
     _content: |
       ```{r show_R_src,echo=FALSE}
         r_file <- dir("build",pattern="*.R$")
-        for(r_file in file_name) {
+        for(file_name in r_file) {
           print("===")
           print(file_name)
           retval <- readLines(paste("build/", file_name, sep=""))

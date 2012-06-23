@@ -11,7 +11,7 @@ Example:
       ``` {r show_test.yml,echo=FALSE}
       retval <- readLines("test/test.yml")
       for(i in 1:length(retval)) {
-        print(retval[i])
+        cat("$$");cat(retval[i]);cat("\n")
       }
       ```
   shell:
@@ -27,7 +27,7 @@ Example:
       ```{r show_test.Rmd,echo=FALSE}
       retval <- readLines("build/test.Rmd")
       for(i in 1:length(retval)) {
-        print(retval[i])
+        cat("$$");cat(retval[i]);cat("\n")
       }
       ```
   R src:
@@ -35,12 +35,13 @@ Example:
       ```{r show_R_src,echo=FALSE}
         r_file <- dir("build",pattern="*.R$")
         for(file_name in r_file) {
-          print("===")
-          print(file_name)
+          cat("$$");cat("\n")
+          cat("$$");cat("\n")
+          cat("$$");cat("\n")
+          cat("$$");cat(file_name);cat("\n")
           retval <- readLines(paste("build/", file_name, sep=""))
           for(i in 1:length(retval)) {
-            print(retval[i])
+            cat("$$");cat(retval[i]);cat("\n")
           }
-          print("===")
         }
       ```

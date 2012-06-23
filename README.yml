@@ -16,10 +16,10 @@ Example:
       ```
   shell:
     _content: |
-      
-        mkdir build
-        cd build && php ../yml2rmd.php ../test/test.yml test.Rmd && cd ..
-      
+      ``` sh
+      mkdir build
+      cd build && php ../yml2rmd.php ../test/test.yml test.Rmd && cd ..
+      ```
   Rmd:
     _attribute:
       _title: build/test.Rmd

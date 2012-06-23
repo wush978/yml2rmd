@@ -1,53 +1,44 @@
-資料檢視:
-  _content: |
-    資料檢視的目的為先利用圖形、表格或敘述統計量初步了解資料，進而決定更進一步的分析方式。
-    
-    %實驗一%
-  實驗一:
-    _content: |
-      %實驗目的%
-      
-      %題組%
-      
-      %解釋變數%
-      
-      %資料檢視%
-    實驗目的:
+Simulation:
+  $latex \phi = (-1, 1)^T$:
+    Parameters:
       _content: |
-        本次實驗的目的為<請填寫實驗目的>
-    題組:
-      _content: |
-        依照題目的設計，本次實驗的題目可分為三組:
-        
-          1. 1-4題<題目的共同特性>
-          2. 5-7題<題目的共同特性>
-          3. 8-10題<題目的共同特性>
-    解釋變數:
-      _content: |
-        本次實驗中同時收集以下可能的解釋變數:
-        
-          1. 性別
-          2. 有無學習樂器的經驗
-          3. 有無參加音樂性社團
-          4. 有無接受課外的音樂訓練
-          5. 學科成績
-    資料檢視:    
+        ```{r params-misq1, echo=FALSE}
+        source("pre.R")
+        show.source("misq1.params.R")
+        ```
+    Experiments:
       _attribute:
-        y_set:
-          X1_4: 1-4題
-          X5_7: 5-7題
-          X8_10: 8-10題
-        x_set:
-          gender: 性別
-          is_learn_music: 有無學習樂器的經驗
-          is_music_group: 有無參加音樂性社團 
-          is_cram_school: 有無接受課外的音樂訓練 
-        _template: |
-          ``` {r}
-          source()
-          ftable_report("%x_set%", "%y_set%")
-          ```
         _generator:
-          0: x_set
-          1: y_set    
-        _class_name: RmdGeneratedNode
+          0: distance
+        distance:
+          0: 0
+          1: 1
+          10: 10
+          100: 100
+      Normality Src:
+        _attribute:
+          _class_name: RmdRsrcNode
+          _src_name: misq1-%distance%.R
+          _template: |
+            library(MISQPlus, quietly=TRUE)
+            source("misq1.params.R")
+            misq1 <- new("MISQ", phi)
+            sim.unit <- function(i) {
+              S <- cbind(rnorm(data.length), rnorm(data.length) + %distance%)
+              dist(S, misq1)
+            }
+            sim.data <- sapply(1:sim.size, sim.unit)
+      Normality Test:
+        _attribute:
+          _class_name: RmdGeneratedNode
+          _template: |
+            ##### D = %distance%
+            
+            - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+            - $latex S_2(t)$ is $latex N(%distance%,1)$ distributed.
+            ```{r qqnorm-misq1-%distance%, echo=FALSE}
+            source("pre.R")
+            cache.source("misq1-%distance%.R")
+            test.normality(sim.data)
+            ```
+      

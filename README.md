@@ -4,7 +4,8 @@ convert .yml to .Rmd
 
 # Example
 
-test/test.yml: 
+
+## test/test.yml 
 
 	Simulation:
 	  $latex \phi = (-1, 1)^T$:
@@ -50,11 +51,13 @@ test/test.yml:
 	            test.normality(sim.data)
 	            ```
 
-shell:
+## shell
 
 	php yml2rmd.php test/test.yml build/test.Rmd
 
-build/test.Rmd:
+## result
+
+### build/test.Rmd:
 
 	# Simulation
 	
@@ -103,3 +106,14 @@ build/test.Rmd:
 	source("pre.R")
 	test.normality(sim.data)
 	```
+
+### misq1-0.R
+
+	library(MISQPlus, quietly=TRUE)
+	source("misq1.params.R")
+	misq1 <- new("MISQ", phi)
+	sim.unit <- function(i) {
+	  S <- cbind(rnorm(data.length), rnorm(data.length) + 0)
+	  dist(S, misq1)
+	}
+	sim.data <- sapply(1:sim.size, sim.unit)

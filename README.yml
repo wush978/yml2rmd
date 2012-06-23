@@ -27,7 +27,7 @@ Example:
       ```{r show_test.Rmd,echo=FALSE}
       retval <- readLines("build/test.Rmd")
       for(i in 1:length(retval)) {
-        cat("$$");cat(retval[i]);cat("\n")
+        cat(retval[i]);cat("\n")
       }
       ```
   R src:

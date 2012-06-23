@@ -77,132 +77,132 @@ cd build && php ../yml2rmd.php ../test/test.yml test.Rmd && cd ..
 
 
 ```
- 
-
-# Simulation
-
-## $latex \phi = (-1, 1)^T$
-
-### Parameters
-
-```{r params-misq1, echo=FALSE}
-source("pre.R")
-show.source("misq1.params.R")
-```
-
-### Experiments
-
-#### Normality Test
-
-##### D = 1
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(1,1)$ distributed.
-```{r qqnorm-misq1-1, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance0-test0.R")
-test.normality(sim.data)
-```
-##### D = 1
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(1,1)$ distributed.
-```{r qqnorm-misq1-1, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance0-test1.R")
-test.normality(sim.data)
-```
-##### D = 1
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(1,1)$ distributed.
-```{r qqnorm-misq1-1, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance0-test2.R")
-test.normality(sim.data)
-```
-##### D = 10
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(10,1)$ distributed.
-```{r qqnorm-misq1-10, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance1-test0.R")
-test.normality(sim.data)
-```
-##### D = 10
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(10,1)$ distributed.
-```{r qqnorm-misq1-10, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance1-test1.R")
-test.normality(sim.data)
-```
-##### D = 10
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(10,1)$ distributed.
-```{r qqnorm-misq1-10, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance1-test2.R")
-test.normality(sim.data)
-```
-##### D = 100
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(100,1)$ distributed.
-```{r qqnorm-misq1-100, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance2-test0.R")
-test.normality(sim.data)
-```
-##### D = 100
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(100,1)$ distributed.
-```{r qqnorm-misq1-100, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance2-test1.R")
-test.normality(sim.data)
-```
-##### D = 100
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(100,1)$ distributed.
-```{r qqnorm-misq1-100, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance2-test2.R")
-test.normality(sim.data)
-```
-##### D = 1000
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(1000,1)$ distributed.
-```{r qqnorm-misq1-1000, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance3-test0.R")
-test.normality(sim.data)
-```
-##### D = 1000
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(1000,1)$ distributed.
-```{r qqnorm-misq1-1000, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance3-test1.R")
-test.normality(sim.data)
-```
-##### D = 1000
-
-- $latex S_1(t)$ is $latex N(0,1)$ distributed.
-- $latex S_2(t)$ is $latex N(1000,1)$ distributed.
-```{r qqnorm-misq1-1000, echo=FALSE}
-source("pre.R")
-cache.source("misq1-distance3-test2.R")
-test.normality(sim.data)
-```
-
+##  
+## 
+## # Simulation
+## 
+## ## $latex \phi = (-1, 1)^T$
+## 
+## ### Parameters
+## 
+## ```{r params-misq1, echo=FALSE}
+## source("pre.R")
+## show.source("misq1.params.R")
+## ```
+## 
+## ### Experiments
+## 
+## #### Normality Test
+## 
+## ##### D = 1
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(1,1)$ distributed.
+## ```{r qqnorm-misq1-1, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance0-test0.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 1
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(1,1)$ distributed.
+## ```{r qqnorm-misq1-1, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance0-test1.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 1
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(1,1)$ distributed.
+## ```{r qqnorm-misq1-1, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance0-test2.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 10
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(10,1)$ distributed.
+## ```{r qqnorm-misq1-10, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance1-test0.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 10
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(10,1)$ distributed.
+## ```{r qqnorm-misq1-10, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance1-test1.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 10
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(10,1)$ distributed.
+## ```{r qqnorm-misq1-10, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance1-test2.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 100
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(100,1)$ distributed.
+## ```{r qqnorm-misq1-100, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance2-test0.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 100
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(100,1)$ distributed.
+## ```{r qqnorm-misq1-100, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance2-test1.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 100
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(100,1)$ distributed.
+## ```{r qqnorm-misq1-100, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance2-test2.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 1000
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(1000,1)$ distributed.
+## ```{r qqnorm-misq1-1000, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance3-test0.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 1000
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(1000,1)$ distributed.
+## ```{r qqnorm-misq1-1000, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance3-test1.R")
+## test.normality(sim.data)
+## ```
+## ##### D = 1000
+## 
+## - $latex S_1(t)$ is $latex N(0,1)$ distributed.
+## - $latex S_2(t)$ is $latex N(1000,1)$ distributed.
+## ```{r qqnorm-misq1-1000, echo=FALSE}
+## source("pre.R")
+## cache.source("misq1-distance3-test2.R")
+## test.normality(sim.data)
+## ```
+## 
 ```
 
 

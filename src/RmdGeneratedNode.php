@@ -26,11 +26,14 @@ class RmdGeneratedNode extends RmdNode
         return $retval;
     }
     
-    private function replace($search, $replace) {
-        $this->_content = str_replace("%$search%", $replace, $this->_content);
+    protected function replace($search, $replace, &$string = null) {
+    	if (is_null($string))
+        	$this->_content = str_replace("%$search%", $replace, $this->_content);
+    	else
+    		$string = str_replace("%$search%", $replace, $string);
     } 
     
-    private function generateCombination($key_list) {
+    protected function generateCombination($key_list) {
         assert(is_array($key_list) | is_null($key_list));
         if (count($key_list) <= 1) {
 	        $retval = array();
@@ -43,7 +46,7 @@ class RmdGeneratedNode extends RmdNode
         return $this->generateCombinationInternal($key_list);
     }
     
-    private function generateCombinationInternal($key_list) {
+    protected function generateCombinationInternal($key_list) {
         if (count($key_list) == 2) {
             $retval = array();
             $list0 = $this->getAttribute($key_list[0], array());

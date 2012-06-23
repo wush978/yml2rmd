@@ -28,7 +28,7 @@ try {
 		throw new Exception("$yml_file_name is an invalid .yml file");
 	}
 	
-	require_once __DIR__ . '/src/RmdGeneratedNode.php';
+	require_once __DIR__ . '/src/include.php';
 	
 	$rmd_root = new RmdNode( '', 0, $yml_file);
 	file_put_contents($rmd_file_name, $rmd_root->render()); 

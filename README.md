@@ -5,6 +5,7 @@ convert .yml to .Rmd
 # Example
 
 test/test.yml: 
+
 	Simulation:
 	  $latex \phi = (-1, 1)^T$:
 	    Parameters:
@@ -50,6 +51,7 @@ test/test.yml:
 	            ```
 
 shell:
+
 	php yml2rmd.php test/test.yml build/test.Rmd
 
 build/test.Rmd:

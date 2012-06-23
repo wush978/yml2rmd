@@ -53,7 +53,8 @@ convert .yml to .Rmd
 
 ## shell
 
-	php yml2rmd.php test/test.yml build/test.Rmd
+	mkdir build
+	cd build && php ../yml2rmd.php ../test/test.yml test.Rmd && cd ..
 
 ## result
 
@@ -107,7 +108,7 @@ convert .yml to .Rmd
 	test.normality(sim.data)
 	```
 
-### misq1-0.R
+### build/misq1-0.R
 
 	library(MISQPlus, quietly=TRUE)
 	source("misq1.params.R")
